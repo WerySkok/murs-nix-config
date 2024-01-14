@@ -24,7 +24,7 @@
     home.packages = with pkgs; [
       tree
       nixpkgs-fmt
-      htop
+      btop
       jq
       inputs.nil.packages.${system}.default
       inputs.agenix.packages.${system}.default
