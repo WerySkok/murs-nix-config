@@ -18,6 +18,7 @@
     ];
 
     services.vscode-server.enable = true;
+    services.vscode-server.installPath = "~/.vscodium-server";
     home.stateVersion = "23.11";
 
     home.packages = with pkgs; [
