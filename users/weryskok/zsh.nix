@@ -6,14 +6,19 @@
 
     oh-my-zsh = {
       enable = true;
-      theme = "powerlevel10k/powerlevel10k";
-      zplug = {
-        enable = true;
-        plugins = [
-          { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; }
-        ];
-      };
     };
+
+    plugins = [
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+    ];
+
+    initExtra = ''
+      source ~/.p10k.zsh
+    '';
 
     syntaxHighlighting.enable = true;
     enableAutosuggestions = true;

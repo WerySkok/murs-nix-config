@@ -51,7 +51,7 @@
     in
     {
       nixosConfigurations = {
-        koi = makeNixosSystem {
+        srv04 = makeNixosSystem {
           system = "x86_64-linux";
           modules = [
             agenix.nixosModules.default
