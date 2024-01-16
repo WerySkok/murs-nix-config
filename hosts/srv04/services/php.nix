@@ -1,6 +1,6 @@
 { config
 , pkgs
-, ... 
+, ...
 }: {
   environment.systemPackages = with pkgs; [ php ];
 
@@ -14,9 +14,6 @@
       "pm.min_spare_servers" = 1;
       "pm.max_spare_servers" = 3;
       "pm.max_requests" = 500;
-      "php_admin_value[error_log]" = "stderr";
-      "php_admin_flag[log_errors]" = true;
-      "catch_workers_output" = true;
     };
   };
 }

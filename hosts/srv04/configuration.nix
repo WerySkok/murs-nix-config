@@ -14,6 +14,7 @@
     ./services/nginx.nix
     ./services/murs-site.nix
     ./services/phpmyadmin.nix
+    ./services/mtrwiki.nix
   ];
 
   boot.tmp.cleanOnBoot = true;

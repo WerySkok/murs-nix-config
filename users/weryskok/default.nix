@@ -1,9 +1,9 @@
-{ abs, pkgs, inputs, ... }:
+{ abs, pkgs, inputs, config, ... }:
 
 {
   users.users.weryskok = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "kvm" "docker" ];
+    extraGroups = [ "wheel" "kvm" "docker" config.services.nginx.group ];
     shell = pkgs.zsh;
 
     openssh.authorizedKeys.keyFiles = [
