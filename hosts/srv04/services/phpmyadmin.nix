@@ -2,10 +2,10 @@
 
 {
   imports = [
-    ./mysql.nix
+    ../modules/mysql.nix
+    ../modules/docker.nix
   ];
 
-  virtualisation.docker.enable = true;
   virtualisation.oci-containers.containers = {
     "phpmyadmin" = {
       image = "phpmyadmin:latest";

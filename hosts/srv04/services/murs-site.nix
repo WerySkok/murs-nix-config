@@ -3,8 +3,8 @@
 , ...
 }: {
   imports = [
-    ./php.nix
-    ./mysql.nix
+    ../modules/php.nix
+    ../modules/mysql.nix
   ];
 
   services.nginx.virtualHosts."murs-mc.ru" = {
