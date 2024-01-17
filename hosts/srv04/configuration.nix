@@ -15,6 +15,7 @@
     ./services/murs-site.nix
     ./services/phpmyadmin.nix
     ./services/mtrwiki.nix
+    ./services/pterodactyl.nix
   ];
 
   boot.tmp.cleanOnBoot = true;

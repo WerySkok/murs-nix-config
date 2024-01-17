@@ -27,6 +27,11 @@
       inputs.darwin.follows = "";
     };
 
+    arion = {
+      url = "github:hercules-ci/arion";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -39,6 +44,7 @@
     , vscode-server
     , agenix
     , home-manager
+    , arion
     , ...
     }:
     let
