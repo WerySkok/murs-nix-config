@@ -27,8 +27,8 @@ in
   services.nginx = {
     enable = true;
 
-    recommendedGzipSettings = true;
     recommendedOptimisation = true;
+    recommendedGzipSettings = true;
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
     statusPage = true;
@@ -45,8 +45,8 @@ in
     # default server that would reject all unmatched requests
     appendHttpConfig = ''
       server {
-        listen 80 http2 default_server;
-        listen 443 ssl http2 default_server;
+        listen 80 default_server;
+        listen 443 ssl default_server;
 
         ssl_reject_handshake on;
         return 444;

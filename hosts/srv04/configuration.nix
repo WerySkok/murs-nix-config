@@ -16,6 +16,7 @@
     ./services/phpmyadmin.nix
     ./services/mtrwiki.nix
     ./services/pterodactyl.nix
+    ./services/wings.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
@@ -23,4 +24,6 @@
   networking.hostName = "srv04";
   networking.domain = "murs-mc.ru";
   services.qemuGuest.enable = true;
+
+  networking.firewall.allowedTCPPorts = [ 25565 ];
 }
