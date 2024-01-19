@@ -24,6 +24,7 @@
     git
     micro
     wget
+    rclone
   ];
 
   services.openssh = {

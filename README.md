@@ -17,7 +17,7 @@ Ports to be proxied:
 * 22480 — phpmyadmin
 
 ## TODOs
-* Backups
+* Cleaning up backups
 * Wiki
 * Mail Server
 * Forum maybe?

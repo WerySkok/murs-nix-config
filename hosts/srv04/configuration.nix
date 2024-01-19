@@ -17,6 +17,7 @@
     ./services/mtrwiki.nix
     ./services/pterodactyl.nix
     ./services/wings.nix
+    ./services/backups.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
