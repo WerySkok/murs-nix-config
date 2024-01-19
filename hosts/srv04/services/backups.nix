@@ -29,6 +29,7 @@ in
       set -o pipefail
       ${pkgs.rustic-rs}/bin/rustic backup /srv/pterodactyl --tag pterodactyl
       ${pkgs.rustic-rs}/bin/rustic backup /var/lib/pterodactyl --tag wings
+      ${pkgs.rustic-rs}/bin/rustic backup /var/vmail --tag email
       ${config.services.mysql.package}/bin/mysqldump --user dumper --password=dump --databases murssite phpmyadmin | ${pkgs.rustic-rs}/bin/rustic backup --stdin-filename database.sql - --tag database
     '';
   };

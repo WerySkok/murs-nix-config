@@ -18,6 +18,7 @@
     ./services/pterodactyl.nix
     ./services/wings.nix
     ./services/backups.nix
+    ./services/mail.nix
   ];
 
   boot.tmp.cleanOnBoot = true;

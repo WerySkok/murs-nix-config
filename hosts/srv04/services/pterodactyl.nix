@@ -1,9 +1,11 @@
 { pkgs
 , config
 , inputs
+, abs
 , ...
 }:
 let
+  secrets = import (abs "lib/secrets.nix");
   database = {
     MYSQL_PASSWORD = "Ky^Ydy9TSH5dzpt3"; # i'm not sure it'd be useful in case of leak
     MYSQL_ROOT_PASSWORD = "Ky^Ydy9TSH5dzpt3";
@@ -14,17 +16,20 @@ let
     APP_SERVICE_AUTHOR = "weryskok@gmail.com";
   };
   mail = {
-    MAIL_FROM = "noreply+panel@murs-mc.ru"; # TODO: Set up mail
+    MAIL_FROM = "noreply+panel@murs-mc.ru"; 
     MAIL_DRIVER = "smtp";
-    MAIL_HOST = "mail";
-    MAIL_PORT = "1025";
-    MAIL_USERNAME = "";
-    MAIL_PASSWORD = "";
+    MAIL_HOST = "srv04.murs-mc.ru";
+    MAIL_PORT = "465";
+    MAIL_USERNAME = "noreply@murs-mc.ru";
+    #MAIL_PASSWORD = ""; declared secretly
     MAIL_ENCRYPTION = "true";
   };
 in
 {
-  imports = [ ../modules/arion.nix ];
+  imports = [
+    ../modules/arion.nix
+    (secrets.declare [ "pterodactyl-config" ])
+  ];
   # based on https://github.com/pterodactyl/panel/blob/fe83a4f7552dd7ffe5a8455d09d42c443e6b3e91/docker-compose.example.yml
   virtualisation.arion.projects.pterodactyl = {
     settings = {
@@ -59,9 +64,12 @@ in
             "/srv/pterodactyl/certs/:/etc/letsencrypt/"
             "/srv/pterodactyl/logs/:/app/storage/logs"
           ];
+
+          env_file = [config.age.secrets.wings-config.path];
+
           environment = {
             inherit (panel) APP_URL APP_TIMEZONE APP_SERVICE_AUTHOR;
-            inherit (mail) MAIL_FROM MAIL_DRIVER MAIL_HOST MAIL_PORT MAIL_USERNAME MAIL_PASSWORD MAIL_ENCRYPTION;
+            inherit (mail) MAIL_FROM MAIL_DRIVER MAIL_HOST MAIL_PORT MAIL_USERNAME MAIL_ENCRYPTION;
             DB_PASSWORD = database.MYSQL_PASSWORD;
             APP_ENV = "production";
             APP_ENVIRONMENT_ONLY = "false";

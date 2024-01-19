@@ -14,6 +14,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-23-11.url = "github:NixOS/nixpkgs/nixos-23.11";
     vscode-server.url = "github:nix-community/nixos-vscode-server";
 
     nil = {
@@ -36,6 +37,9 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    simple-nixos-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver/master";
+    simple-nixos-mailserver.inputs.nixpkgs.follows = "nixpkgs-23-11";
   };
 
   outputs =
@@ -45,6 +49,8 @@
     , agenix
     , home-manager
     , arion
+    , simple-nixos-mailserver
+    , nixpkgs-23-11
     , ...
     }:
     let
@@ -62,6 +68,7 @@
           modules = [
             agenix.nixosModules.default
             home-manager.nixosModules.home-manager
+            simple-nixos-mailserver.nixosModule
             ./hosts/srv04/configuration.nix
           ];
         };
