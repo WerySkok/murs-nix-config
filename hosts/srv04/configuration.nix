@@ -19,6 +19,7 @@
     ./services/wings.nix
     ./services/backups.nix
     ./services/mail.nix
+    ./services/wiki.nix
   ];
 
   boot.tmp.cleanOnBoot = true;

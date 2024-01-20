@@ -30,7 +30,8 @@ in
       ${pkgs.rustic-rs}/bin/rustic backup /srv/pterodactyl --tag pterodactyl
       ${pkgs.rustic-rs}/bin/rustic backup /var/lib/pterodactyl --tag wings
       ${pkgs.rustic-rs}/bin/rustic backup /var/vmail --tag email
-      ${config.services.mysql.package}/bin/mysqldump --user dumper --password=dump --databases murssite phpmyadmin | ${pkgs.rustic-rs}/bin/rustic backup --stdin-filename database.sql - --tag database
+      ${pkgs.rustic-rs}/bin/rustic backup /var/lib/mediawiki --tag mediawiki
+      ${config.services.mysql.package}/bin/mysqldump --user dumper --password=dump --databases murssite phpmyadmin mediawiki | ${pkgs.rustic-rs}/bin/rustic backup --stdin-filename database.sql - --tag database
     '';
   };
 

@@ -18,7 +18,6 @@ Ports to be proxied:
 
 ## TODOs
 * Cleaning up backups
-* Wiki
-* Mail Server
 * Forum maybe?
 * Prometheus and Graphana (analytics)
+* RcGcDw
