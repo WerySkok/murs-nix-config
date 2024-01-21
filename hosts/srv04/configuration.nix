@@ -20,6 +20,7 @@
     ./services/backups.nix
     ./services/mail.nix
     ./services/wiki.nix
+    ./services/rcgcdw.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
