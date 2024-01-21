@@ -17,7 +17,7 @@
         UPLOAD_LIMIT = "1G";
         TZ = "Europe/Moscow";
       };
-      ports = [ "22480:80" ];
+      ports = [ "127.0.0.1:22480:80" ];
     };
   };
 

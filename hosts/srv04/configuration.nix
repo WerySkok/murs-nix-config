@@ -29,5 +29,6 @@
   networking.domain = "murs-mc.ru";
   services.qemuGuest.enable = true;
 
-  networking.firewall.allowedTCPPorts = [ 25565 ];
+  networking.firewall.enable = true;
+
 }

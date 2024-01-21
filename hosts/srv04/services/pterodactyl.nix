@@ -55,7 +55,7 @@ in
           image = "ghcr.io/pterodactyl/panel:latest";
           restart = "always";
           ports = [
-            "8001:80"
+            "127.0.0.1:8001:80"
           ];
           links = [ "database" "cache" ];
           volumes = [
