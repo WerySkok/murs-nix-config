@@ -17,7 +17,6 @@ Ports to be proxied:
 * 22480 — phpmyadmin
 
 ## TODOs
-* Cleaning up backups
-* Forum maybe?
 * Prometheus and Graphana (analytics)
-* RcGcDw
+* Cleaning up backups
+* Improved config handling for RcGcDw
