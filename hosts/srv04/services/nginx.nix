@@ -27,8 +27,8 @@ in
   services.nginx = {
     enable = true;
 
-    recommendedOptimisation = true;
-    recommendedGzipSettings = true;
+    # recommendedOptimisation = true;
+    # recommendedGzipSettings = true;
     recommendedProxySettings = true;
     recommendedTlsSettings = true;
     statusPage = true;

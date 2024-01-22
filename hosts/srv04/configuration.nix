@@ -21,6 +21,10 @@
     ./services/mail.nix
     ./services/wiki.nix
     ./services/rcgcdw.nix
+    ./services/grafana.nix
+    ./services/prometheus.nix
+    ./services/loki.nix
+    ./services/promtail.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
