@@ -25,6 +25,7 @@
     ./services/prometheus.nix
     ./services/loki.nix
     ./services/promtail.nix
+    ./services/planka.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
