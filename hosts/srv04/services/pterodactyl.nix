@@ -65,7 +65,7 @@ in
             "/srv/pterodactyl/logs/:/app/storage/logs"
           ];
 
-          env_file = [config.age.secrets.wings-config.path];
+          env_file = [config.age.secrets.pterodactyl-config.path];
 
           environment = {
             inherit (panel) APP_URL APP_TIMEZONE APP_SERVICE_AUTHOR;
