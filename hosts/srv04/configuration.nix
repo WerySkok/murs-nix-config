@@ -26,6 +26,7 @@
     ./services/loki.nix
     ./services/promtail.nix
     ./services/planka.nix
+    ./services/maps-reverseproxy.nix
   ];
 
   boot.tmp.cleanOnBoot = true;
