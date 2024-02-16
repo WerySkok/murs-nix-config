@@ -125,6 +125,8 @@ in
       $wgPasswordSender = "noreply@murs-mc.ru";
       #$wgShowExceptionDetails = true;
       $wgGroupPermissions['sysop']['interwiki'] = true;
+      $wgScribuntoDefaultEngine = 'luastandalone'; # TODO: maybe luasandbox would be better but idk
+      $wgScribuntoEngineConf['luastandalone']['luaPath'] = '${pkgs.lua5_1}/bin/lua';
     '';
   };
 
