@@ -124,6 +124,7 @@ in
       $wgEmergencyContact = "weryskok@murs-mc.ru";
       $wgPasswordSender = "noreply@murs-mc.ru";
       #$wgShowExceptionDetails = true;
+      $wgGroupPermissions['sysop']['interwiki'] = true;
     '';
   };
 
