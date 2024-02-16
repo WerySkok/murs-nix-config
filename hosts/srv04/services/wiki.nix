@@ -98,6 +98,11 @@ in
         url = "https://github.com/Telshin/Spoilers.git";
         hash = "sha256-qpMYYNjnolj5yWYyOAfuTL6CvL4lZzqx3FuNtWcjKT8=";
       };
+
+      Purge = pkgs.fetchgit {
+        url = "https://github.com/AlPha5130/mediawiki-extensions-Purge.git";
+        hash = "sha256-81Q5tQvgCKFUw3Vqfp++2S5NLjIjxuinUxVr9Jno6wo=";
+      };
     };
     extraConfig = ''
       $wgLogos = [
