@@ -135,6 +135,9 @@ in
 
       # InstantCommons allows wiki to use images from https://commons.wikimedia.org
       $wgUseInstantCommons = true;
+
+      $wgAllowUserCss = true;
+      $wgAllowUserJs = true;
     '';
   };
 
