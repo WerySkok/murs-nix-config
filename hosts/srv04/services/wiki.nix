@@ -32,6 +32,12 @@ in
     };
     database.createLocally = false;
     database.passwordFile = config.age.secrets.mediawiki-db-password.path;
+    skins = {
+      MinervaNeue = pkgs.fetchzip {
+        url = "https://extdist.wmflabs.org/dist/skins/MinervaNeue-REL1_41-68e98df.tar.gz";
+        hash = "sha256-yIZB84K7hawTTu6cblRZqlyJ4vymJqx9TtlLMn2gLSA=";
+      };
+    };
     extensions = {
       # bundled extensions
       CategoryTree = null;
@@ -138,6 +144,9 @@ in
 
       $wgAllowUserCss = true;
       $wgAllowUserJs = true;
+
+      $wgDefaultMobileSkin = 'minerva';
+      $wgMinervaShowCategories['base'] = true;
     '';
   };
 
