@@ -114,6 +114,8 @@ in
     extraConfig = ''
       $wgMainCacheType = CACHE_ACCEL;
 
+      $wgMetaNamespace = "MURS";
+
       $wgLogos = [
         '1x' => "/w/images/thumb/5/5a/MURS_Blue_logo_with_background.png/155px-MURS_Blue_logo_with_background.png",		// path to 1x version
         'icon' => "/w/images/thumb/5/5a/MURS_Blue_logo_with_background.png/155px-MURS_Blue_logo_with_background.png",			// A version of the logo without wordmark and tagline
