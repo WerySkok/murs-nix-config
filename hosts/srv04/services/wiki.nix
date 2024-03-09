@@ -1,6 +1,7 @@
 { pkgs
 , config
 , abs
+, lib
 , ...
 }:
 let
@@ -111,6 +112,8 @@ in
       };
     };
     extraConfig = ''
+      $wgMainCacheType = CACHE_ACCEL;
+
       $wgLogos = [
         '1x' => "/w/images/thumb/5/5a/MURS_Blue_logo_with_background.png/155px-MURS_Blue_logo_with_background.png",		// path to 1x version
         'icon' => "/w/images/thumb/5/5a/MURS_Blue_logo_with_background.png/155px-MURS_Blue_logo_with_background.png",			// A version of the logo without wordmark and tagline
@@ -149,6 +152,12 @@ in
       $wgMinervaShowCategories['base'] = true;
     '';
   };
+
+  services.phpfpm.pools.mediawiki.phpPackage = lib.mkForce (pkgs.php81.buildEnv {
+    extensions = ({ enabled, all }: enabled ++ (with all; [
+      apcu
+    ]));
+  });
 
   services.nginx.virtualHosts.${config.services.mediawiki.nginx.hostName} = {
     forceSSL = true;
