@@ -27,6 +27,7 @@
     ./services/promtail.nix
     ./services/planka.nix
     ./services/maps-reverseproxy.nix
+    ./services/votesystem.nix
   ];
 
   boot.tmp.cleanOnBoot = true;

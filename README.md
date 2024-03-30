@@ -18,6 +18,7 @@ Ports* to be proxied:
 * 3031 — Promtail
 * 8001 — Pterodactyl panel
 * 8002 — Grafana
+* 8003 — votesystem
 * 9001 — Prometheus
 * 22480 — phpmyadmin
 
