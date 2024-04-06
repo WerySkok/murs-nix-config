@@ -155,15 +155,35 @@ in
     '';
   };
 
-  services.phpfpm.pools.mediawiki.phpPackage = lib.mkForce (pkgs.php81.buildEnv {
-    extensions = ({ enabled, all }: enabled ++ (with all; [
-      apcu
-    ]));
-  });
+  services.phpfpm.pools.mediawiki =
+    {
+      phpPackage = lib.mkForce (pkgs.php81.buildEnv {
+        extensions = ({ enabled, all }: enabled ++ (with all; [
+          apcu
+        ]));
+      });
+
+      settings = {
+        "pm" = "dynamic";
+        "pm.max_children" = 32;
+        "pm.max_requests" = 500;
+        "pm.start_servers" = 2;
+        "pm.min_spare_servers" = 2;
+        "pm.max_spare_servers" = lib.mkForce 5;
+      };
+
+      phpOptions = ''
+        upload_max_filesize = 150M
+        post_max_size = 200M
+      '';
+    };
 
   services.nginx.virtualHosts.${config.services.mediawiki.nginx.hostName} = {
     forceSSL = true;
     sslCertificate = config.age.secrets.cf-origin-public-cert.path;
     sslCertificateKey = config.age.secrets.cf-origin-private-cert.path;
+    extraConfig = ''
+      client_max_body_size 250M;
+    '';
   };
 }
