@@ -70,6 +70,7 @@ in
       TitleBlacklist = null;
       VisualEditor = null;
       WikiEditor = null;
+      PdfHandler = null;
 
       TemplateStyles = pkgs.fetchzip {
         url = "https://extdist.wmflabs.org/dist/extensions/TemplateStyles-REL1_41-a9dde29.tar.gz";
@@ -152,6 +153,18 @@ in
 
       $wgDefaultMobileSkin = 'minerva';
       $wgMinervaShowCategories['base'] = true;
+
+      $wgImageMagickConvertCommand  = '${pkgs.imagemagick}/bin/convert';
+
+      $wgSVGConverterPath = '${pkgs.imagemagick}/bin';
+      $wgSVGConverter = 'ImageMagick';
+      $wgFileExtensions[] = 'svg';
+
+      $wgFileExtensions[] = 'pdf';
+      $wgPdfProcessor = '${pkgs.ghostscript}/bin/gs';
+      $wgPdfPostProcessor = $wgImageMagickConvertCommand;
+      $wgPdfInfo = '${pkgs.poppler_utils}/bin/pdfinfo';
+      $wgPdftoText = '${pkgs.poppler_utils}/bin/pdftotext';
     '';
   };
 
