@@ -19,7 +19,6 @@ in
   systemd.services.backups = {
     description = "Restic backups";
     after = [ "syslog.target" "network-online.target" "run-agenix.d.mount" ];
-    wantedBy = [ "multi-user.target" ];
     serviceConfig.EnvironmentFile = config.age.secrets.rustic-config.path;
     serviceConfig.Type = "oneshot";
     serviceConfig.User = "root";
@@ -32,6 +31,7 @@ in
       ${pkgs.rustic-rs}/bin/rustic backup /var/vmail --tag email
       ${pkgs.rustic-rs}/bin/rustic backup /var/lib/mediawiki --tag mediawiki
       ${config.services.mysql.package}/bin/mysqldump --user dumper --password=dump --databases murssite phpmyadmin mediawiki | ${pkgs.rustic-rs}/bin/rustic backup --stdin-filename database.sql - --tag database
+      ${pkgs.rustic-rs}/bin/rustic forget --prune --keep-last 20
     '';
   };
 

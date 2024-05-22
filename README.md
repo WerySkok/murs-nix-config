@@ -25,5 +25,4 @@ Ports* to be proxied:
 *Due to a [bug](https://github.com/NixOS/nixpkgs/issues/111852), these ports have to be specified in Docker like `127.0.0.1:8000:8000`, with `127.0.0.1:` in the begining. 
 
 ## TODOs
-* Cleaning up backups
 * Improved config handling for RcGcDw
