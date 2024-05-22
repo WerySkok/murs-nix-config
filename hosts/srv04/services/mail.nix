@@ -10,8 +10,8 @@ in
 {
   imports =
     [
-      { disabledModules = [ "services/mail/dovecot.nix" ]; }
-      (inputs.nixpkgs-23-11 + /nixos/modules/services/mail/dovecot.nix)
+      # { disabledModules = [ "services/mail/dovecot.nix" ]; }
+      # (inputs.nixpkgs-23-11 + /nixos/modules/services/mail/dovecot.nix)
       (secrets.declare [ "weryskok-at-murs-mc.ru" "noreply-at-murs-mc.ru" ])
     ];
 
