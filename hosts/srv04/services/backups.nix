@@ -31,7 +31,6 @@ in
       ${pkgs.rustic-rs}/bin/rustic backup /var/vmail --tag email
       ${pkgs.rustic-rs}/bin/rustic backup /var/lib/mediawiki --tag mediawiki
       ${config.services.mysql.package}/bin/mysqldump --user dumper --password=dump --databases murssite phpmyadmin mediawiki | ${pkgs.rustic-rs}/bin/rustic backup --stdin-filename database.sql - --tag database
-      ${pkgs.rustic-rs}/bin/rustic forget --prune --keep-last 20
     '';
   };
 
@@ -40,6 +39,29 @@ in
     timerConfig = {
       OnCalendar = "*-*-* 5:00:00 Europe/Moscow";
       Persistent = true;
+      Unit = "backups.service";
+    };
+
+  };
+
+  systemd.services.prunebackups = {
+    description = "Prune Restic backups";
+    after = [ "syslog.target" "network-online.target" "run-agenix.d.mount" ];
+    serviceConfig.EnvironmentFile = config.age.secrets.rustic-config.path;
+    serviceConfig.Type = "oneshot";
+    serviceConfig.User = "root";
+    path = [pkgs.rclone];
+    script = ''
+      set -eu
+      set -o pipefail
+      ${pkgs.rustic-rs}/bin/rustic forget --prune --keep-last 20
+    '';
+  };
+
+  systemd.timers.prunebackups = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "Mon *-*-* 7:00:00 Europe/Moscow";
       Unit = "backups.service";
     };
 
