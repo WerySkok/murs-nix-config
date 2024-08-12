@@ -35,8 +35,9 @@ in
     database.passwordFile = config.age.secrets.mediawiki-db-password.path;
     skins = {
       MinervaNeue = pkgs.fetchzip {
-        url = "https://extdist.wmflabs.org/dist/skins/MinervaNeue-REL1_41-68e98df.tar.gz";
-        hash = "sha256-yIZB84K7hawTTu6cblRZqlyJ4vymJqx9TtlLMn2gLSA=";
+        name = "MinervaNeue";
+        url = "https://extdist.wmflabs.org/dist/skins/MinervaNeue-REL1_42-7a94759.tar.gz";
+        hash = "sha256-8G27ZfKoNSGoF/3OBbcgCnfaNRxyDn2UFJ+jIWH5qFs=";
       };
     };
     extensions = {
@@ -73,43 +74,49 @@ in
       PdfHandler = null;
 
       TemplateStyles = pkgs.fetchzip {
-        url = "https://extdist.wmflabs.org/dist/extensions/TemplateStyles-REL1_41-a9dde29.tar.gz";
-        hash = "sha256-pp7xpb9Zco1P8OdEAd61MSn2PlrQY0Zc1o/gmaKF4zs=";
+        name = "TemplateStyles";
+        url = "https://extdist.wmflabs.org/dist/extensions/TemplateStyles-REL1_42-573ec78.tar.gz";
+        hash = "sha256-oELW/5tMNqTuwlN7lIIXT4OI+KL9lZts7v+VkyQyPMU=";
       };
 
       CodeMirror = pkgs.fetchzip {
-        url = "https://extdist.wmflabs.org/dist/extensions/CodeMirror-REL1_41-f833cc4.tar.gz";
-        hash = "sha256-Rg6ua5trCDuCSh3jLzrUhIxZXEKiTo5htrUprNAAV68=";
+        name = "CodeMirror";
+        url = "https://extdist.wmflabs.org/dist/extensions/CodeMirror-REL1_42-e277497.tar.gz";
+        hash = "sha256-sWmM8zat67d3ZhSZc95mqb6cYif8Mblc341lQsscwwg=";
       };
 
       CreatePage = pkgs.fetchzip {
-        url = "https://extdist.wmflabs.org/dist/extensions/CreatePage-REL1_41-9bbb7a7.tar.gz";
-        hash = "sha256-qHVEOO9tc17cX1b7Qd1zXaVDrxEwkJJ0owQrUSEvuOo=";
+        name = "CreatePage";
+        url = "https://extdist.wmflabs.org/dist/extensions/CreatePage-REL1_42-b2f54fd.tar.gz";
+        hash = "sha256-yYFKZr4Zl+D5mhg16KcehF7sQHqJNtkhhuepm6FmDFs=";
       };
 
       PageViewInfo = pkgs.fetchzip {
-        url = "https://extdist.wmflabs.org/dist/extensions/PageViewInfo-REL1_41-86cdaa5.tar.gz";
-        hash = "sha256-pK80KApB81U9GVS7nwk7zM7n3T0aGjNGVE6QifEgNVo=";
+        # TODO: приплести аналитику
+        name = "PageViewInfo";
+        url = "https://extdist.wmflabs.org/dist/extensions/PageViewInfo-REL1_42-976e162.tar.gz";
+        hash = "sha256-lQkeqVfeuFTXncwDkQHcb+EnSt9G6Uh65ag0nip+KSM=";
       };
 
       MobileFrontend = pkgs.fetchzip {
-        url = "https://extdist.wmflabs.org/dist/extensions/MobileFrontend-REL1_41-c66ff31.tar.gz";
-        hash = "sha256-LGYB4zmf8a7NoFQbel0/86jzZzCBZRHwU1j2J5i/MVU=";
+        name = "MobileFrontend";
+        url = "https://extdist.wmflabs.org/dist/extensions/MobileFrontend-REL1_42-2b9ff88.tar.gz";
+        hash = "sha256-sdSvLMBSqnDuSM/kmGsXsbu99QJ8fD1eKiUvtfEaC3k=";
       };
 
       Moderation = pkgs.fetchgit {
         url = "https://github.com/edwardspec/mediawiki-moderation.git";
-        hash = "sha256-fGzNzG+yIdgPgEpqDLAVb0siTtpOzcsLuYDFY07r4vM=";
+        hash = "sha256-wK2xZP9a/ECRAKY8nt5+JrrBRP/Vn5XB4dbwijgTRu0=";
       };
 
       Spoilers = pkgs.fetchgit {
         url = "https://github.com/Telshin/Spoilers.git";
-        hash = "sha256-qpMYYNjnolj5yWYyOAfuTL6CvL4lZzqx3FuNtWcjKT8=";
+        hash = "sha256-tOv4Ju0rdOA+H+RVkDe4nmapQAyUBXKf/Wt6jmD4F/M=";
       };
 
       Purge = pkgs.fetchgit {
         url = "https://github.com/AlPha5130/mediawiki-extensions-Purge.git";
-        hash = "sha256-81Q5tQvgCKFUw3Vqfp++2S5NLjIjxuinUxVr9Jno6wo=";
+        hash = "sha256-eHkgCA/w1rvZl0Abv8GorDCCwFtdmGtv6oFveyxk+bU=";
       };
     };
     extraConfig = ''
@@ -170,7 +177,7 @@ in
 
   services.phpfpm.pools.mediawiki =
     {
-      phpPackage = lib.mkForce (pkgs.php81.buildEnv {
+      phpPackage = lib.mkForce (pkgs.php82.buildEnv {
         extensions = ({ enabled, all }: enabled ++ (with all; [
           apcu
         ]));
