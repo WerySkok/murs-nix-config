@@ -17,7 +17,7 @@ in
   ];
 
   systemd.services.backups = {
-    description = "Restic backups";
+    description = "Rustic backups";
     after = [ "syslog.target" "network-online.target" "run-agenix.d.mount" ];
     serviceConfig.EnvironmentFile = config.age.secrets.rustic-config.path;
     serviceConfig.Type = "oneshot";
@@ -45,7 +45,7 @@ in
   };
 
   systemd.services.prunebackups = {
-    description = "Prune Restic backups";
+    description = "Prune Rustic backups";
     after = [ "syslog.target" "network-online.target" "run-agenix.d.mount" ];
     serviceConfig.EnvironmentFile = config.age.secrets.rustic-config.path;
     serviceConfig.Type = "oneshot";
