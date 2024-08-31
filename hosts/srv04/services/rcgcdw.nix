@@ -11,9 +11,10 @@ let
     lxml
   ]);
   rcgcdw = fetchGit {
-    url = "https://gitlab.com/weryskok/RcGcDw.git";
-    ref = "master";
-    rev = "b14e4bf3e3f1951c76059c2f468fbc414853efd9";
+    name = "RcGcDw";
+    url = "https://gitlab.com/piotrex43/RcGcDw.git";
+    ref = "testing";
+    rev = "59452b4a5a8d082b6c8dd7e9dcfb89c35b9cf972";
   };
 in
 {
@@ -34,7 +35,7 @@ in
         Type = "simple";
         User = "root";
         Restart = "on-failure";
-        RestartSec = "5s";
+        RestartSec = "300s";
       };
     };
     "rcgcdw@murswiki" = {
