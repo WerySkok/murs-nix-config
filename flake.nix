@@ -14,7 +14,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-23-11.url = "github:NixOS/nixpkgs/nixos-23.11";
     vscode-server.url = "github:nix-community/nixos-vscode-server";
 
     nil = {
@@ -50,7 +49,6 @@
     , home-manager
     , arion
     , simple-nixos-mailserver
-    , nixpkgs-23-11
     , ...
     }:
     let

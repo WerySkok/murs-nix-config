@@ -1,17 +1,17 @@
 # Copied from https://github.com/BadCoder-Network/pterodactyl-wings-nix
 { lib
-, buildGo122Module
+, buildGo123Module
 , fetchFromGitHub
 ,
 }:
-buildGo122Module rec {
+buildGo123Module rec {
   pname = "pterodactyl-wings";
-  version = "v1.11.13";
+  version = "1.11.13";
 
   src = fetchFromGitHub {
     owner = "pterodactyl";
     repo = "wings";
-    rev = "${version}";
+    rev = "v${version}";
     sha256 = "sha256-UpYUHWM2J8nH+srdKSpFQEaPx2Rj2+YdphV8jJXcoBU=";
   };
 
@@ -21,4 +21,13 @@ buildGo122Module rec {
   ldflags = [
     "-X github.com/pterodactyl/wings/system.Version=${version}"
   ];
+
+  meta = with lib; {
+    description = "The server control plane for Pterodactyl Panel. Written from the ground-up with security, speed, and stability in mind";
+    homepage = "https://github.com/pterodactyl/wings";
+    license = licenses.mit;
+    mainProgram = "wings";
+    changelog = "https://github.com/pterodactyl/wings/releases/tag/v${version}";
+    platforms = platforms.linux;
+  };
 }

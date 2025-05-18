@@ -16,7 +16,7 @@
       }
     ];
 
-    initExtra = ''
+    initContent = ''
       source ~/.p10k.zsh
     '';
 
