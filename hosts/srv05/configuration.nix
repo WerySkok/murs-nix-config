@@ -25,7 +25,7 @@
     #./services/prometheus.nix
     #./services/loki.nix
     #./services/promtail.nix
-    #./services/maps-reverseproxy.nix
+    ./services/maps-reverseproxy.nix
     #./services/votesystem.nix
   ];
 
