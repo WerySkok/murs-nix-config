@@ -15,8 +15,8 @@
     ./services/murs-site.nix
     ./services/phpmyadmin.nix
     #./services/mtrwiki.nix
-    #./services/pterodactyl.nix
-    #./services/wings.nix
+    ./services/pterodactyl.nix
+    ./services/wings.nix
     ./services/backups.nix
     ./services/mail.nix
     #./services/wiki.nix
