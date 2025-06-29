@@ -70,6 +70,16 @@
             ./hosts/srv04/configuration.nix
           ];
         };
+
+        srv05 = makeNixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            agenix.nixosModules.default
+            home-manager.nixosModules.home-manager
+            simple-nixos-mailserver.nixosModule
+            ./hosts/srv05/configuration.nix
+          ];
+        };
       };
     };
 }
