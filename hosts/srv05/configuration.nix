@@ -14,12 +14,12 @@
     ./services/nginx.nix
     ./services/murs-site.nix
     ./services/phpmyadmin.nix
-    #./services/mtrwiki.nix
+    ./services/mtrwiki.nix
     ./services/pterodactyl.nix
     ./services/wings.nix
     ./services/backups.nix
     ./services/mail.nix
-    #./services/wiki.nix
+    ./services/wiki.nix
     #./services/rcgcdw.nix
     #./services/grafana.nix
     #./services/prometheus.nix
