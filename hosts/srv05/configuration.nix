@@ -20,7 +20,7 @@
     ./services/backups.nix
     ./services/mail.nix
     ./services/wiki.nix
-    #./services/rcgcdw.nix
+    ./services/rcgcdw.nix
     #./services/grafana.nix
     #./services/prometheus.nix
     #./services/loki.nix
