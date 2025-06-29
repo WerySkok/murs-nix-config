@@ -11,9 +11,9 @@
     ./hardware-configuration.nix
     ./networking.nix # generated at runtime by nixos-infect
 
-    #./services/nginx.nix
-    #./services/murs-site.nix
-    #./services/phpmyadmin.nix
+    ./services/nginx.nix
+    ./services/murs-site.nix
+    ./services/phpmyadmin.nix
     #./services/mtrwiki.nix
     #./services/pterodactyl.nix
     #./services/wings.nix
