@@ -17,7 +17,7 @@
     #./services/mtrwiki.nix
     #./services/pterodactyl.nix
     #./services/wings.nix
-    #./services/backups.nix
+    ./services/backups.nix
     #./services/mail.nix
     #./services/wiki.nix
     #./services/rcgcdw.nix

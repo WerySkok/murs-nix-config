@@ -10,7 +10,8 @@
   services.nginx.virtualHosts."murs-mc.ru" = {
     forceSSL = true;
     root = "/var/www/murs-mc.ru";
-    locations = { # NixOS generic PHP site config
+    locations = {
+      # NixOS generic PHP site config
       "/".tryFiles = "$uri $uri/ /index.php?$query_string";
       "/favicon.ico".extraConfig = ''
         access_log off; log_not_found off;
@@ -25,6 +26,16 @@
       '';
       "~ /\\.(?!well-known).*".extraConfig = ''
         deny all;
+      '';
+      "~* composer\\.".extraConfig = ''
+        deny all;
+        access_log off;
+        log_not_found off;
+      '';
+      "^~ /vendor/".extraConfig = ''
+        deny all;
+        access_log off;
+        log_not_found off;
       '';
     };
     extraConfig = ''
