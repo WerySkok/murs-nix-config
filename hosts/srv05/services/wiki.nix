@@ -170,8 +170,8 @@ in
       $wgFileExtensions[] = 'pdf';
       $wgPdfProcessor = '${pkgs.ghostscript}/bin/gs';
       $wgPdfPostProcessor = $wgImageMagickConvertCommand;
-      $wgPdfInfo = '${pkgs.poppler_utils}/bin/pdfinfo';
-      $wgPdftoText = '${pkgs.poppler_utils}/bin/pdftotext';
+      $wgPdfInfo = '${pkgs.poppler-utils}/bin/pdfinfo';
+      $wgPdftoText = '${pkgs.poppler-utils}/bin/pdftotext';
     '';
   };
 

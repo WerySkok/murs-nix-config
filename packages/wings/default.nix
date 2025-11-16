@@ -1,10 +1,10 @@
 # Copied from https://github.com/BadCoder-Network/pterodactyl-wings-nix
 { lib
-, buildGo123Module
+, buildGo124Module
 , fetchFromGitHub
 ,
 }:
-buildGo123Module rec {
+buildGo124Module rec {
   pname = "pterodactyl-wings";
   version = "1.11.13";
 

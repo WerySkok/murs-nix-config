@@ -23,7 +23,7 @@ in
   ];
 
   environment.systemPackages = with pkgs; [
-    rustic-rs
+    rustic
     rclone
   ];
 
