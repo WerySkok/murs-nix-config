@@ -21,8 +21,8 @@
     ./services/mail.nix
     ./services/wiki.nix
     ./services/rcgcdw.nix
-    #./services/grafana.nix
-    #./services/prometheus.nix
+    ./services/grafana.nix
+    ./services/prometheus.nix
     #./services/loki.nix
     #./services/promtail.nix
     ./services/maps-reverseproxy.nix
