@@ -9,6 +9,7 @@
 
   services.nginx.virtualHosts."murs-mc.ru" = {
     forceSSL = true;
+    enableACME = true;
     root = "/var/www/murs-mc.ru";
     locations = {
       # NixOS generic PHP site config
@@ -41,7 +42,5 @@
     extraConfig = ''
       index index.html index.htm index.php;
     '';
-    sslCertificate = config.age.secrets.cf-origin-public-cert.path;
-    sslCertificateKey = config.age.secrets.cf-origin-private-cert.path;
   };
 }

@@ -26,7 +26,6 @@
     locations."/" = {
       proxyPass = "http://127.0.0.1:22480";
     };
-    sslCertificate = config.age.secrets.cf-origin-public-cert.path;
-    sslCertificateKey = config.age.secrets.cf-origin-private-cert.path;
+    enableACME = true;
   };
 }

@@ -91,8 +91,7 @@ in
     locations."/" = {
       proxyPass = "http://127.0.0.1:8001";
     };
-    sslCertificate = config.age.secrets.cf-origin-public-cert.path;
-    sslCertificateKey = config.age.secrets.cf-origin-private-cert.path;
+    enableACME = true;
   };
 
   # Create paths if they do not exist, user & group are subject to the discussion

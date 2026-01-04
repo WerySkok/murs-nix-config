@@ -8,15 +8,6 @@ in
     (abs "modules/wings.nix")
     ./nginx.nix
   ];
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = "weryskok@gmail.com";
-  };
-  users.users.nginx.extraGroups = [ "acme" ];
-  services.nginx.virtualHosts."srv05.murs-mc.ru" = {
-    forceSSL = true;
-    enableACME = true;
-  };
 
   services.wings.enable = true;
   services.wings.configFile = config.age.secrets.wings-config.path;

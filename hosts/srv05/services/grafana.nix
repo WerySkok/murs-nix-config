@@ -14,7 +14,6 @@
       proxyWebsockets = true;
     };
     forceSSL = true;
-    sslCertificate = config.age.secrets.cf-origin-public-cert.path;
-    sslCertificateKey = config.age.secrets.cf-origin-private-cert.path;
+    enableACME = true;
   };
 }

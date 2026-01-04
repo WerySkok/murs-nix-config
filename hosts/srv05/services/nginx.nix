@@ -55,9 +55,18 @@ in
 
     # declared in the relevant service nixfiles
     # virtualHosts = { ... };
+    virtualHosts."srv05.murs-mc.ru" = {
+      forceSSL = true;
+      enableACME = true;
+    };
   };
 
 
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "weryskok@gmail.com";
+  };
+  users.users.nginx.extraGroups = [ "acme" ];
 
   networking.firewall.allowedTCPPorts = [ 80 443 ];
 }

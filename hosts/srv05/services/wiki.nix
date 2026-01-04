@@ -199,8 +199,7 @@ in
 
   services.nginx.virtualHosts.${config.services.mediawiki.nginx.hostName} = {
     forceSSL = true;
-    sslCertificate = config.age.secrets.cf-origin-public-cert.path;
-    sslCertificateKey = config.age.secrets.cf-origin-private-cert.path;
+    enableACME = true;
     extraConfig = ''
       client_max_body_size 250M;
     '';
