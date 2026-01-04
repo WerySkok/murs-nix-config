@@ -31,7 +31,7 @@ in
         hashedPasswordFile = config.age.secrets."noreply-at-murs-mc.ru".path;
       };
     };
-    certificateScheme = "acme-nginx";
+    x509.useACMEHost = config.mailserver.fqdn;
   };
   security.acme = {
     acceptTerms = true;

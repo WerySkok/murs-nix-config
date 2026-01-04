@@ -50,7 +50,6 @@ in
       Gadgets = null;
       ImageMap = null;
       InputBox = null;
-      Interwiki = null;
       Linter = null;
       LoginNotify = null;
       Math = null;
