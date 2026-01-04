@@ -36,8 +36,8 @@ in
     skins = {
       MinervaNeue = pkgs.fetchzip {
         name = "MinervaNeue";
-        url = "https://extdist.wmflabs.org/dist/skins/MinervaNeue-REL1_43-0b53fa0.tar.gz";
-        hash = "sha256-7924Ai2FXf+ogcaIm2/DfkT6YK2ZNDWJEpxaGEdK860=";
+        url = "https://extdist.wmflabs.org/dist/skins/MinervaNeue-REL1_45-3d5769e.tar.gz";
+        hash = "sha256-eGBa5i/xH6iiyPImdR7WGC5cenbZter6duvMfVFzFI8=";
       };
     };
     extensions = {
@@ -74,48 +74,48 @@ in
 
       TemplateStyles = pkgs.fetchzip {
         name = "TemplateStyles";
-        url = "https://extdist.wmflabs.org/dist/extensions/TemplateStyles-REL1_43-d987e8e.tar.gz";
-        hash = "sha256-uVG4UAaO/1UTqyXA6N8qcr8rOOP68aoP+0R8aK/V+TQ=";
+        url = "https://extdist.wmflabs.org/dist/extensions/TemplateStyles-REL1_45-f1b7898.tar.gz";
+        hash = "sha256-DJz01SpIqv8mDYSI7V3DyvaNys78JzK/VFC3r6mfWZc=";
       };
 
       CodeMirror = pkgs.fetchzip {
         name = "CodeMirror";
-        url = "https://extdist.wmflabs.org/dist/extensions/CodeMirror-REL1_43-7a5a85e.tar.gz";
-        hash = "sha256-GW7vTzPQAe5MPa4VvBd62jRoB9j2EJvZrlxHXxVOMvs=";
+        url = "https://extdist.wmflabs.org/dist/extensions/CodeMirror-REL1_45-2242dd5.tar.gz";
+        hash = "sha256-WpJrj3Ye+AmK5FkfKHQh8ZLIQtLDFXXtVEBCVKkdshE=";
       };
 
       CreatePage = pkgs.fetchzip {
         name = "CreatePage";
-        url = "https://extdist.wmflabs.org/dist/extensions/CreatePage-REL1_43-17049f4.tar.gz";
-        hash = "sha256-I7DHBTU0f1fIrd1LGn5Sv/Iz4+sSQWCPlKellbR7TJk=";
+        url = "https://extdist.wmflabs.org/dist/extensions/CreatePage-REL1_45-cc13a6c.tar.gz";
+        hash = "sha256-D1cqm5kv6V5YJBeTT51Ij7x+PTxigncggzDtf590Lk0=";
       };
 
       PageViewInfo = pkgs.fetchzip {
         # TODO: приплести аналитику
         name = "PageViewInfo";
-        url = "https://extdist.wmflabs.org/dist/extensions/PageViewInfo-REL1_43-974d653.tar.gz";
-        hash = "sha256-S9xZbWI9aQBGijG70dn8K3IQWmZlaViZ5J/Z6DzLDL0=";
+        url = "https://extdist.wmflabs.org/dist/extensions/PageViewInfo-REL1_45-bd10471.tar.gz";
+        hash = "sha256-rG7zv3ZXbnFSMGxnWw5uao060LcZG/z4Bhutnr4wax0=";
       };
 
       MobileFrontend = pkgs.fetchzip {
         name = "MobileFrontend";
-        url = "https://extdist.wmflabs.org/dist/extensions/MobileFrontend-REL1_43-7495c73.tar.gz";
-        hash = "sha256-nzc/i28kGgTFU9IlskJhCoXvFO0jwYr2nzOrOLVcFnE=";
+        url = "https://extdist.wmflabs.org/dist/extensions/MobileFrontend-REL1_45-2bccb7e.tar.gz";
+        hash = "sha256-plQ5hgFO3k/Pz8TAigx3vT3aW+ZtyvM6Vv1lCUbfVCE=";
       };
 
       Moderation = pkgs.fetchgit {
         url = "https://github.com/edwardspec/mediawiki-moderation.git";
-        hash = "sha256-X5Y7vXeaoOIXmYD0L+L6FY/SpV8YX16QPEScDOvZmfY=";
+        hash = "sha256-ioWVaI5uw2fKipsXbPiImonv4kqjh2dYgXamDv1Kx7g=";
       };
 
       Spoilers = pkgs.fetchgit {
         url = "https://github.com/Telshin/Spoilers.git";
-        hash = "sha256-4IQU3h+BpsY44dS4g/HBwIM81D/p8Askn2q4tkgqSUU=";
+        hash = "sha256-e+ZgMppe4jzobvXvuHScP7ntajB2LFshIpsW5dmaSDk=";
       };
 
       Purge = pkgs.fetchgit {
         url = "https://github.com/AlPha5130/mediawiki-extensions-Purge.git";
-        hash = "sha256-D3MfmyQbVHyxo55uXmAmuF1aEz5VKap1vLQAIxgRhdE=";
+        hash = "sha256-Jn1AcoKeFFp3P9k4dw+vO+8w5pHAsV7pHMYPo9AWsZY=";
       };
     };
     extraConfig = ''
