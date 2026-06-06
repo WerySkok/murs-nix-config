@@ -6,6 +6,7 @@
       http_port = 8002;
       http_addr = "127.0.0.1";
     };
+    settings.security.secret_key = "SW2YcwTIb9zpOOhoPsMm"; # 
   };
 
   services.nginx.virtualHosts.${config.services.grafana.settings.server.domain} = {

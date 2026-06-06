@@ -1,18 +1,18 @@
 # Copied from https://github.com/BadCoder-Network/pterodactyl-wings-nix
 { lib
-, buildGo124Module
+, buildGo125Module
 , fetchFromGitHub
 ,
 }:
-buildGo124Module rec {
+buildGo125Module rec {
   pname = "pterodactyl-wings";
-  version = "1.12.0";
+  version = "1.12.3";
 
   src = fetchFromGitHub {
     owner = "pterodactyl";
     repo = "wings";
     rev = "v${version}";
-    sha256 = "sha256-q/gf2HRFXWWhYSMbG5QZI5/1WJjamoJV1z3KG4NuuDQ=";
+    sha256 = "sha256-+iEKAliBJlM/Af5uBGzv4B/zkcXSF9sBvSswMwhu5/w=";
   };
 
   vendorHash = "sha256-BtATik0egFk73SNhawbGnbuzjoZioGFWeA4gZOaofTI=";
