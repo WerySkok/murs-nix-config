@@ -19,6 +19,9 @@
     locations."/" = {
       proxyPass = "http://178.130.53.4:8888";
     };
-    extraConfig = "add_header Access-Control-Allow-Origin https://murs-mc.ru;";
+    extraConfig = ''
+      proxy_hide_header Access-Control-Allow-Origin;
+      add_header Access-Control-Allow-Origin https://murs-mc.ru;
+    '';
   };
 }
