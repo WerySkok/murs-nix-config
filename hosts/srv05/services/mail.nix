@@ -22,7 +22,7 @@ in
 
     # A list of all login accounts. To create the password hashes, use
     # nix-shell -p mkpasswd --run 'mkpasswd -sm bcrypt'
-    loginAccounts = {
+    accounts = {
       "weryskok@murs-mc.ru" = {
         hashedPasswordFile = config.age.secrets."weryskok-at-murs-mc.ru".path;
         aliases = [ "postmaster@murs-mc.ru" "abuse@murs-mc.ru" ];

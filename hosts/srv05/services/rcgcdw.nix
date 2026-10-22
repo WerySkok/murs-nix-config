@@ -30,6 +30,7 @@ in
   systemd.services = {
     "rcgcdw@" = {
       description = "RcGcDw for %i";
+      wants = [ "network-online.target" ];
       after = [ "syslog.target" "network-online.target" "run-agenix.d.mount" ];
       serviceConfig = {
         Type = "simple";

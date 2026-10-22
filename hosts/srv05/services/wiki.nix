@@ -176,7 +176,7 @@ in
 
   services.phpfpm.pools.mediawiki =
     {
-      phpPackage = lib.mkForce (pkgs.php82.buildEnv {
+      phpPackage = lib.mkForce (pkgs.php83.buildEnv {
         extensions = ({ enabled, all }: enabled ++ (with all; [
           apcu
         ]));

@@ -18,6 +18,7 @@ in
 
   systemd.services.backups = {
     description = "Rustic backups";
+    wants = [ "network-online.target" ];
     after = [ "syslog.target" "network-online.target" "run-agenix.d.mount" ];
     serviceConfig.EnvironmentFile = config.age.secrets.rustic-config.path;
     serviceConfig.Type = "oneshot";

@@ -26,8 +26,8 @@
       nixpkgs-fmt
       btop
       jq
-      inputs.nil.packages.${system}.default
-      inputs.agenix.packages.${system}.default
+      inputs.nil.packages.${stdenv.hostPlatform.system}.default
+      inputs.agenix.packages.${stdenv.hostPlatform.system}.default
     ];
   };
 }
